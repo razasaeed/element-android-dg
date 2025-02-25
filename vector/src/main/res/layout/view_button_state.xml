@@ -8,6 +8,7 @@
     <Button
         android:id="@+id/buttonStateButtonFlat"
         style="@style/Widget.Vector.Button.Text"
+        android:textColor="@color/palette_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -51,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/global_retry"
-        android:textColor="?colorError"
+        android:textColor="@color/palette_white"
         tools:layout_gravity="center_horizontal"
         tools:layout_marginTop="160dp" />
 

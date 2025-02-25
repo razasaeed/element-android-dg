@@ -105,8 +105,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
-                    android:background="@null"
+                    app:queryBackground="@android:color/transparent"
+                    android:layout_marginHorizontal="4dp"
+                    android:background="@drawable/rounded_corners_rect"
                     android:minHeight="0dp"
+                    android:queryBackground="@android:color/transparent"
                     tools:queryHint="@string/search_hint" />
 
             </FrameLayout>

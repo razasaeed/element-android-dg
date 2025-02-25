@@ -82,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/use_file"
+            android:textColor="@color/palette_white"
             app:icon="@drawable/ic_file"
             tools:ignore="MissingConstraints" />
 

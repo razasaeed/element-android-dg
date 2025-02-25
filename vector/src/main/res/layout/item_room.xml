@@ -5,17 +5,17 @@
     android:id="@+id/itemRoomLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:colorBackground"
+    android:background="@android:color/transparent"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackground"
+    android:paddingEnd="12dp"
     tools:viewBindingIgnore="true">
 
     <View
         android:id="@+id/roomUnreadIndicator"
         android:layout_width="4dp"
         android:layout_height="0dp"
-        android:background="?vctr_unread_background"
+        android:background="#717069"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         android:id="@+id/roomAvatarContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -124,7 +124,6 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="?vctr_content_primary"
-        android:textStyle="bold"
         app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toStartOf="@id/roomDraftBadge"
         app:layout_constraintHorizontal_bias="0.0"
@@ -172,11 +171,12 @@
 
     <TextView
         android:id="@+id/roomLastEventTimeView"
-        style="@style/Widget.Vector.TextView.Caption"
+        style="@style/Widget.Vector.TextView.Caption.light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:textColor="?vctr_content_secondary"
+        android:layout_marginTop="2dp"
+        android:textColor="?grey_primary"
         app:layout_constraintBottom_toBottomOf="@id/roomNameView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/roomNameView"
@@ -184,7 +184,7 @@
 
     <TextView
         android:id="@+id/subtitleView"
-        style="@style/Widget.Vector.TextView.Body"
+        style="@style/Widget.Vector.TextView.Body.Light"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -192,7 +192,7 @@
         android:ellipsize="end"
         android:lines="2"
         android:textAlignment="viewStart"
-        android:textColor="?vctr_content_secondary"
+        android:textColor="?grey_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/roomNameView"
         app:layout_constraintTop_toBottomOf="@id/roomNameView"

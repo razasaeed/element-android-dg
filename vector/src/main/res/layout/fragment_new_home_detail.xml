@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/clNewHomeDetail"
+    android:background="@drawable/bg_carousel_page">
 
     <im.vector.app.core.ui.views.KeysBackupBanner
         android:id="@+id/homeKeysBackupBanner"
@@ -46,6 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
+            android:paddingHorizontal="8dp"
+            android:background="@android:color/transparent"
             app:layout_constraintTop_toBottomOf="@id/syncStateView">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -53,7 +57,12 @@
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/collapsingToolbarLayoutMediumSize"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:contentScrim="@android:color/transparent"
+                app:collapsedTitleTextColor="?vctr_text_primary"
+                app:expandedTitleTextColor="?vctr_text_primary"
+                app:expandedTitleTextAppearance="@style/TextAppearance.Vector.Title.Bold"
+                app:collapsedTitleTextAppearance="@style/TextAppearance.Vector.Headline.Bold">
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/toolbar"
@@ -61,7 +70,9 @@
                     android:layout_height="?attr/actionBarSize"
                     android:elevation="0dp"
                     app:layout_collapseMode="pin"
-                    tools:title="@string/all_chats">
+                    tools:title="@string/all_chats"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_more">
 
                     <ImageView
                         android:id="@+id/avatar"
@@ -149,7 +160,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/a11y_create_message"
-        android:src="@drawable/ic_new_chat"
+        android:src="@drawable/ic_add"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
