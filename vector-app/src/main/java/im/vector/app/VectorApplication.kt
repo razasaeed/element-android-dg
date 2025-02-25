@@ -71,6 +71,7 @@ import java.util.Locale
 import java.util.concurrent.Executors
 import javax.inject.Inject
 import androidx.work.Configuration as WorkConfiguration
+import androidx.appcompat.app.AppCompatDelegate
 
 @HiltAndroidApp
 class VectorApplication :
@@ -118,6 +119,10 @@ class VectorApplication :
     }
 
     override fun onCreate() {
+        // TODO: temp light theme enforcement
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//        ThemeUtils.setApplicationTheme(this@VectorApplication, ThemeUtils.THEME_LIGHT_VALUE)
+        
         enableStrictModeIfNeeded()
         super.onCreate()
         appContext = this
