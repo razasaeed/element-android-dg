@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2024 New Vector Ltd.
+ * Copyright 2025 New Vector Ltd.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Element-Commercial
  * Please see LICENSE files in the repository root for full details.
@@ -27,6 +27,7 @@ import im.vector.app.features.VectorFeatures
 import im.vector.app.features.onboarding.OnboardingAction
 import im.vector.app.features.onboarding.OnboardingFlow
 import im.vector.app.features.settings.VectorPreferences
+import im.vector.app.features.themes.ThemeUtils
 import im.vector.lib.strings.CommonStrings
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -65,6 +66,15 @@ class FtueAuthSplashCarouselFragment :
     }
 
     private fun setupViews() {
+
+        if (ThemeUtils.isLightTheme(requireContext())) {
+            views.clSplash.setBackgroundResource(im.vector.app.R.drawable.bg_white_rounded)
+            views.splashCarousel.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page)
+        } else {
+            views.clSplash.setBackgroundResource(im.vector.app.R.drawable.bg_transparent_rounded)
+            views.splashCarousel.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page_dark)
+        }
+
         val carouselAdapter = carouselController.adapter
         views.splashCarousel.adapter = carouselAdapter
         tabLayoutMediator = TabLayoutMediator(views.carouselIndicator, views.splashCarousel) { _, _ -> }
@@ -83,7 +93,7 @@ class FtueAuthSplashCarouselFragment :
         }
 
         if (buildMeta.isDebug || vectorPreferences.developerMode()) {
-            views.loginSplashVersion.isVisible = true
+            views.loginSplashVersion.isVisible = false
             @SuppressLint("SetTextI18n")
             views.loginSplashVersion.text = "Version : ${buildMeta.versionName}\n" +
                     "Branch: ${buildMeta.gitBranchName} ${buildMeta.gitRevision}"

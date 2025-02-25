@@ -110,7 +110,7 @@
             android:textColor="?vctr_content_secondary"
             android:visibility="gone"
             app:drawableStartCompat="@drawable/ic_debug_icon"
-            app:drawableTint="?colorPrimary"
+            app:drawableTint="@color/palette_red"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/splashCarouselGutterEnd"
             app:layout_constraintStart_toStartOf="@id/splashCarouselGutterStart"

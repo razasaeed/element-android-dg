@@ -30,11 +30,11 @@
     </style>
 
     <style name="VectorMaterialThemeOverlayPositive">
-        <item name="android:backgroundTint">@color/palette_verde</item>
+        <!-- Keep default colors from the theme -->
     </style>
 
     <style name="Widget.Vector.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="colorControlHighlight">?colorSecondary</item>
+        <item name="colorControlHighlight">@color/palette_red</item>
         <item name="materialThemeOverlay">@style/VectorMaterialThemeOverlayPositive</item>
         <item name="android:textAppearance">@style/TextAppearance.Vector.Button</item>
         <item name="cornerRadius">8dp</item>
