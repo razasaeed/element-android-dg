@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.airbnb.mvrx.activityViewModel
@@ -50,6 +51,7 @@ import im.vector.app.features.qrcode.QrCodeScannerActivity
 import im.vector.app.features.settings.VectorPreferences
 import im.vector.app.features.settings.VectorSettingsActivity.Companion.EXTRA_DIRECT_ACCESS_SECURITY_PRIVACY_MANAGE_SESSIONS
 import im.vector.app.features.spaces.SpaceListBottomSheet
+import im.vector.app.features.themes.ThemeUtils
 import im.vector.app.features.workers.signout.BannerState
 import im.vector.app.features.workers.signout.ServerBackupStatusAction
 import im.vector.app.features.workers.signout.ServerBackupStatusViewModel
@@ -136,6 +138,12 @@ class NewHomeDetailFragment :
         setupDebugButton()
         setupFabs()
         setupObservers()
+
+        if (ThemeUtils.isLightTheme(requireContext())) {
+            views.clNewHomeDetail.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page)
+        } else {
+            views.clNewHomeDetail.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page_dark)
+        }
 
         childFragmentManager.commitTransaction {
             add(R.id.roomListContainer, HomeRoomListFragment::class.java, null, HOME_ROOM_LIST_FRAGMENT_TAG)
@@ -329,6 +337,8 @@ class NewHomeDetailFragment :
 
     private fun setupToolbar() {
         setupToolbar(views.toolbar)
+        val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_more)
+        views.toolbar.overflowIcon = drawable
 
         views.collapsingToolbar.debouncedClicks(::openSpaceSettings)
         views.toolbar.debouncedClicks(::openSpaceSettings)

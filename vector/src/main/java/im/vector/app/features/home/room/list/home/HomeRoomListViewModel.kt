@@ -286,7 +286,7 @@ class HomeRoomListViewModel @AssistedInject constructor(
                     StateView.State.Empty(
                             title = stringProvider.getString(CommonStrings.home_empty_no_rooms_title, userName),
                             message = stringProvider.getString(CommonStrings.home_empty_no_rooms_message),
-                            image = drawableProvider.getDrawable(R.drawable.ill_empty_all_chats),
+                            image = drawableProvider.getDrawable(R.drawable.ic_empty_chats),
                             isBigImage = true
                     )
                 }

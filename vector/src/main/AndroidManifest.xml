@@ -301,7 +301,12 @@
             android:name=".features.call.conference.VectorJitsiActivity"
             android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize"
             android:launchMode="singleTask"
-            android:supportsPictureInPicture="true" />
+            android:supportsPictureInPicture="true"
+            android:theme="@style/Theme.Vector.Jitsi"
+            android:excludeFromRecents="false"
+            android:autoRemoveFromRecents="true" />
+
+        <!--android:theme="@style/Theme.Vector.Jitsi"-->
 
         <activity android:name=".features.terms.ReviewTermsActivity" />
         <activity
