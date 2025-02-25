@@ -32,13 +32,14 @@ object ThemeUtils {
     const val APPLICATION_THEME_KEY = "APPLICATION_THEME_KEY"
 
     // the theme possible values
-    private const val SYSTEM_THEME_VALUE = "system"
-    private const val THEME_DARK_VALUE = "dark"
-    private const val THEME_LIGHT_VALUE = "light"
-    private const val THEME_BLACK_VALUE = "black"
+    public const val SYSTEM_THEME_VALUE = "system"
+    public const val THEME_DARK_VALUE = "dark"
+    public const val THEME_LIGHT_VALUE = "light"
+    public const val THEME_BLACK_VALUE = "black"
 
     // The default theme
-    private const val DEFAULT_THEME = SYSTEM_THEME_VALUE
+    // TODO: Important, change back to system theme when dark theme issue is resolved
+    private const val DEFAULT_THEME = THEME_LIGHT_VALUE
 
     private var currentTheme = AtomicReference<String>(null)
 

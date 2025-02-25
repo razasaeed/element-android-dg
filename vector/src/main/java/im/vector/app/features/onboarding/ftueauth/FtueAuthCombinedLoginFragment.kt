@@ -7,8 +7,16 @@
 
 package im.vector.app.features.onboarding.ftueauth
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
+import android.text.Html
+import android.text.InputType
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +25,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
+import im.vector.app.R
 import im.vector.app.core.extensions.clearErrorOnChange
 import im.vector.app.core.extensions.content
 import im.vector.app.core.extensions.editText
@@ -35,6 +44,7 @@ import im.vector.app.features.login.render
 import im.vector.app.features.onboarding.OnboardingAction
 import im.vector.app.features.onboarding.OnboardingViewEvents
 import im.vector.app.features.onboarding.OnboardingViewState
+import im.vector.app.features.themes.ThemeUtils
 import im.vector.lib.strings.CommonStrings
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.launchIn
@@ -64,6 +74,53 @@ class FtueAuthCombinedLoginFragment :
             viewModel.handle(OnboardingAction.UserNameEnteredAction.Login(views.loginInput.content()))
         }
         views.loginForgotPassword.debouncedClicks { viewModel.handle(OnboardingAction.PostViewEvent(OnboardingViewEvents.OnForgetPasswordClicked)) }
+
+        if (ThemeUtils.isLightTheme(requireContext())) {
+//            views.flLogin.setBackgroundResource(im.vector.app.R.drawable.bg_white_rounded)
+//            views.clLogin.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page)
+            views.loginFormScrollView.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page)
+        } else {
+            views.flLogin.setBackgroundResource(im.vector.app.R.drawable.bg_transparent_rounded)
+            views.clLogin.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page_dark)
+            views.loginFormScrollView.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page_dark)
+        }
+
+        val fullText = getString(im.vector.lib.strings.R.string.register_if_no_account)
+        val spannable = SpannableString(fullText)
+
+        spannable.setSpan(
+                ForegroundColorSpan(Color.parseColor("#D71920")),
+                0,
+                "Register".length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        spannable.setSpan(
+                StyleSpan(Typeface.BOLD),
+                0,
+                "Register".length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        spannable.setSpan(
+                ForegroundColorSpan(Color.parseColor("#1A1E1A")),
+                "Register".length,
+                fullText.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        views.loginSubHeaderTitle.text = spannable
+
+//        val passwordToggleIcon = views.loginPasswordInput.passwordVisibilityToggleDrawable
+//        views.loginPasswordInput.setEndIconOnClickListener {
+//            if (views.loginPasswordEditText.inputType == InputType.TYPE_TEXT_VARIATION_PASSWORD) {
+//                views.loginPasswordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+//                passwordToggleIcon?.setTint(Color.RED)
+//            } else {
+//                views.loginPasswordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+//                passwordToggleIcon?.setTint(Color.GREEN)
+//            }
+//        }
     }
 
     private fun setupSubmitButton() {

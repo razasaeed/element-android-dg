@@ -25,6 +25,7 @@ import im.vector.app.features.navigation.SettingsActivityPayload
 import im.vector.app.features.settings.devices.VectorSettingsDevicesFragment
 import im.vector.app.features.settings.notifications.VectorSettingsNotificationFragment
 import im.vector.app.features.settings.threepids.ThreePidsSettingsFragment
+import im.vector.app.features.themes.ThemeUtils
 import im.vector.lib.core.utils.compat.getParcelableExtraCompat
 import im.vector.lib.strings.CommonStrings
 import org.matrix.android.sdk.api.failure.GlobalError
@@ -58,6 +59,12 @@ class VectorSettingsActivity : VectorBaseActivity<ActivityVectorSettingsBinding>
     override fun initUiAndData() {
         setupToolbar(views.settingsToolbar)
                 .allowBack()
+
+        if (ThemeUtils.isLightTheme(this@VectorSettingsActivity)) {
+            views.coordinatorLayout.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page)
+        } else {
+            views.coordinatorLayout.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page_dark)
+        }
 
         if (isFirstCreation()) {
             // display the fragment

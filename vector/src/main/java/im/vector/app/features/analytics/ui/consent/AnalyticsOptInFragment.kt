@@ -19,6 +19,7 @@ import im.vector.app.core.platform.VectorBaseFragment
 import im.vector.app.core.utils.openUrlInChromeCustomTab
 import im.vector.app.databinding.FragmentAnalyticsOptinBinding
 import im.vector.app.features.analytics.AnalyticsConfig
+import im.vector.app.features.themes.ThemeUtils
 import im.vector.lib.strings.CommonStrings
 import javax.inject.Inject
 
@@ -41,6 +42,12 @@ class AnalyticsOptInFragment :
         super.onViewCreated(view, savedInstanceState)
         setupLink()
         setupListeners()
+
+        if (ThemeUtils.isLightTheme(requireContext())) {
+//            views.clAnalyticOptin.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page)
+        } else {
+            views.clAnalyticOptin.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page_dark)
+        }
     }
 
     private fun setupListeners() {

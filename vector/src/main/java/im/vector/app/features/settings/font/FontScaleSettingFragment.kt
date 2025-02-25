@@ -19,6 +19,7 @@ import im.vector.app.core.extensions.restart
 import im.vector.app.core.platform.VectorBaseFragment
 import im.vector.app.databinding.FragmentSettingsFontScalingBinding
 import im.vector.app.features.settings.FontScaleValue
+import im.vector.app.features.themes.ThemeUtils
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -49,6 +50,12 @@ class FontScaleSettingFragment :
                     requireActivity().restart()
                 }
             }
+        }
+
+        if (ThemeUtils.isLightTheme(requireContext())) {
+            views.clFontScaling.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page)
+        } else {
+            views.clFontScaling.setBackgroundResource(im.vector.lib.ui.styles.R.drawable.bg_carousel_page_dark)
         }
     }
 
