@@ -183,5 +183,6 @@
     <color name="grey_primary_black">#121212</color>
     <color name="grey_primary_grey">#959595</color>
     <color name="grey_black">#121212</color>
+    <color name="palette_red">#D71920</color>
 
 </resources>
