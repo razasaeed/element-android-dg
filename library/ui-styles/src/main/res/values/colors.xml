@@ -23,7 +23,7 @@
     <!-- Other useful color -->
     <!-- Emoji text has to use a black text color -->
     <color name="emoji_color">@android:color/black</color>
-    <color name="join_conference_animated_color">#0BAC7E</color>
+    <color name="join_conference_animated_color">#D71920</color>
 
     <color name="half_transparent_status_bar">#80000000</color>
 
@@ -140,7 +140,7 @@
     <color name="vctr_live_location_dark">@color/palette_prune</color>
 
     <!-- Shield colors -->
-    <color name="shield_color_trust">#0DBD8B</color>
+    <color name="shield_color_trust">#D71920</color>
     <color name="shield_color_trust_background">#0F0DBD8B</color>
     <color name="shield_color_black">#17191C</color>
     <color name="shield_color_gray">#91A1C0</color>
@@ -178,5 +178,10 @@
     <attr name= "vctr_text_primary" format="color" />
     <color name="vctr_text_primary_light">#1B1D22</color>
     <color name="vctr_text_primary_dark">#EBEEF2</color>
+
+    <attr name= "grey_primary" format="color" />
+    <color name="grey_primary_black">#121212</color>
+    <color name="grey_primary_grey">#959595</color>
+    <color name="grey_black">#121212</color>
 
 </resources>

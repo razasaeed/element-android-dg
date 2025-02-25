@@ -7,7 +7,7 @@
         <!-- Element attribute for palette -->
         <!-- content colors -->
         <item name="vctr_content_primary">@color/element_content_primary_light</item>
-        <item name="vctr_content_secondary">@color/element_content_secondary_light</item>
+        <item name="vctr_content_secondary">@color/element_content_tertiary_dark</item>
         <item name="vctr_content_tertiary">@color/element_content_tertiary_light</item>
         <item name="vctr_content_quaternary">@color/element_content_quaternary_light</item>
         <item name="vctr_content_quinary">@color/element_content_quinary_light</item>
@@ -61,6 +61,7 @@
         <item name= "vctr_icon_critical_primary" >@color/vctr_icon_critical_primary_light</item>
         <item name= "vctr_text_critical_primary" >@color/vctr_text_critical_primary_light</item>
         <item name= "vctr_text_primary" >@color/vctr_text_primary_light</item>
+        <item name= "grey_primary" >@color/grey_primary_black</item>
 
         <!-- Material color -->
         <item name="colorPrimary">@color/element_accent_light</item>

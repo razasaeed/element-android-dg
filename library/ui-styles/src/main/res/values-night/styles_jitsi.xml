@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Vector.Jitsi" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- React Native specific -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        
+        <!-- Dialog and Toast text handling -->
+        <item name="android:textViewStyle">@style/JitsiTextViewStyle</item>
+        <item name="android:buttonStyle">@style/JitsiButtonStyle</item>
+        <item name="android:dialogTheme">@style/JitsiDialogStyle</item>
+    </style>
+
+    <style name="JitsiTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+
+    <style name="JitsiButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="JitsiDialogStyle" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:windowMinWidthMajor">85%</item>
+        <item name="android:windowMinWidthMinor">85%</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!--<style name="JitsiTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Vector.Jitsi</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>
+    </style>
+
+    <style name="TextAppearance.Vector.Jitsi" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>-->
+</resources>

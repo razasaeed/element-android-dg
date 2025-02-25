@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Widget.Vector.Toolbar.Base" parent="Widget.MaterialComponents.Toolbar">
-        <item name="android:background">?vctr_toolbar_background</item>
+        <item name="android:background">@android:color/transparent</item>
         <item name="elevation">0dp</item>
 
         <!-- main text -->
@@ -17,21 +17,48 @@
         <item name="android:touchscreenBlocksFocus">false</item>
     </style>
 
+    <style name="Widget.Vector.Toolbar.NewBase" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+
+        <!-- main text -->
+        <item name="titleTextAppearance">@style/TextAppearance.Vector.Widget.NewActionBarTitle</item>
+
+        <!-- sub text -->
+        <item name="subtitleTextAppearance">@style/TextAppearance.Vector.Widget.ActionBarSubTitle</item>
+
+        <item name="navigationIconTint">?vctr_content_secondary</item>
+
+        <!-- a11y -->
+        <item name="android:touchscreenBlocksFocus">false</item>
+    </style>
+
     <!-- Default toolbar style -->
     <style name="Widget.Vector.Toolbar" parent="Widget.Vector.Toolbar.Base">
         <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
     <!-- Toolbar for settings Activity (so we keep the default contentInsetStartWithNavigation here) -->
     <style name="Widget.Vector.Toolbar.Settings" parent="Widget.Vector.Toolbar.Base" />
 
+    <style name="Widget.Vector.Toolbar.NewSettings" parent="Widget.Vector.Toolbar.NewBase" />
+
     <!-- Toolbar text style -->
     <!-- main text -->
     <style name="TextAppearance.Vector.Widget.ActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">?vctr_content_primary</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.Vector.Widget.NewActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">?vctr_content_primary</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <!-- sub text -->
@@ -50,7 +77,7 @@
     </style>
 
     <style name="Widget.Vector.CollapsingToolbar.Medium" parent="Widget.Material3.CollapsingToolbar.Medium">
-        <item name="expandedTitleTextAppearance">@style/TextAppearance.Vector.Title.Medium</item>
+        <item name="expandedTitleTextAppearance">@style/TextAppearance.Vector.Title.Bold</item>
         <item name="expandedTitleMarginBottom">20dp</item>
         <item name="collapsedTitleTextAppearance">@style/TextAppearance.Vector.Headline.Bold</item>
         <!-- a11y -->
