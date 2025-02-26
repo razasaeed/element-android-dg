@@ -91,7 +91,6 @@ class VectorJitsiActivity : VectorBaseActivity<ActivityJitsiBinding>(), JitsiMee
 
     override fun onPause() {
         super.onPause()
-
         JitsiMeetActivityDelegate.onHostPause(this)
     }
 
