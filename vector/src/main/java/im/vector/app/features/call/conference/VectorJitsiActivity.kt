@@ -89,6 +89,12 @@ class VectorJitsiActivity : VectorBaseActivity<ActivityJitsiBinding>(), JitsiMee
         lifecycle.addObserver(ConferenceEventObserver(this, this::onBroadcastEvent))
     }
 
+    override fun onPause() {
+        super.onPause()
+
+        JitsiMeetActivityDelegate.onHostPause(this)
+    }
+
     override fun onResume() {
         super.onResume()
         JitsiMeetActivityDelegate.onHostResume(this)
@@ -102,8 +108,9 @@ class VectorJitsiActivity : VectorBaseActivity<ActivityJitsiBinding>(), JitsiMee
     }
 
     override fun onStop() {
-        JitsiMeetActivityDelegate.onHostPause(this)
         super.onStop()
+        JitsiMeetActivityDelegate.onHostPause(this)
+        JitsiMeetOngoingConferenceService.abort(this)
     }
 
     override fun onDestroy() {
@@ -208,6 +215,7 @@ class VectorJitsiActivity : VectorBaseActivity<ActivityJitsiBinding>(), JitsiMee
                 .setFeatureFlag("call-integration.enabled", false)
                 .setRoom(joinConference.confId)
                 .setSubject(joinConference.subject)
+                .setAudioMuted(true)
                 .build()
         jitsiMeetView?.join(jitsiMeetConferenceOptions)
     }
